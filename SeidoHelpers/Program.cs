@@ -107,31 +107,31 @@ class Program
         {
             Console.WriteLine("\n\ncsConsoleInput Usage Example");
 
-            int _nrOfDices;
-            if (!csConsoleInput.TryReadInt32("Enter an integer", -1, 101, out _nrOfDices))
+            int _intanswer;
+            if (!csConsoleInput.TryReadInt32("Enter an integer", -1, 101, out _intanswer))
             {
                 _continue = false;
                 break;
             }
-            Console.WriteLine($"You entered {_nrOfDices}");
+            Console.WriteLine($"You entered {_intanswer}");
 
-            string _answer = null;
+            string _stringanswer = null;
             if (_continue &&
-                !csConsoleInput.TryReadString("Enter a string", out _answer))
+                !csConsoleInput.TryReadString("Enter a string", out _stringanswer))
             {
                 _continue = false;
                 break;
             }
-            Console.WriteLine($"You entered {_answer}");
+            Console.WriteLine($"You entered {_stringanswer}");
             
-            DateTime _dt = default;
+            DateTime _dtanswer = default;
             if (_continue &&
-                !csConsoleInput.TryReadDateTime("Enter a date and time", out _dt))
+                !csConsoleInput.TryReadDateTime("Enter a date and time", out _dtanswer))
             {
                 _continue = false;
                 break;
             }
-            Console.WriteLine($"You entered {_dt}");
+            Console.WriteLine($"You entered {_dtanswer}");
             
         } while (_continue);
         #endregion
