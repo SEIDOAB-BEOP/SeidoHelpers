@@ -136,7 +136,7 @@ class Program
         } while (_continue);
         #endregion
 
-        Console.WriteLine("\n\ncsConsoleInput Quit");
+        Console.WriteLine("\n\nSeidoHelpers Quit");
         Console.ReadKey();
 
     }
