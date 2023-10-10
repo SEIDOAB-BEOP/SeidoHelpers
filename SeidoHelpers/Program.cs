@@ -7,8 +7,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        #region SeedGenerator Usage Examples
-        Console.WriteLine("SeedGenerator Usage Examples");
+        #region csSeedGenerator Usage Examples
+        Console.WriteLine("csSeedGenerator Usage Examples");
 
         //Create a generator, inherited from .NET Random
         var rnd = new csSeedGenerator();
@@ -101,6 +101,42 @@ class Program
 
         #endregion
 
+        #region csConsoleInput Usage Example
+        bool _continue = true;
+        do
+        {
+            Console.WriteLine("\n\ncsConsoleInput Usage Example");
+
+            int _nrOfDices;
+            if (!csConsoleInput.TryReadInt32("Enter an integer", -1, 101, out _nrOfDices))
+            {
+                _continue = false;
+                break;
+            }
+            Console.WriteLine($"You entered {_nrOfDices}");
+
+            string _answer = null;
+            if (_continue &&
+                !csConsoleInput.TryReadString("Enter a string", out _answer))
+            {
+                _continue = false;
+                break;
+            }
+            Console.WriteLine($"You entered {_answer}");
+            
+            DateTime _dt = default;
+            if (_continue &&
+                !csConsoleInput.TryReadDateTime("Enter a date and time", out _dt))
+            {
+                _continue = false;
+                break;
+            }
+            Console.WriteLine($"You entered {_dt}");
+            
+        } while (_continue);
+        #endregion
+
+        Console.WriteLine("\n\ncsConsoleInput Quit");
         Console.ReadKey();
 
     }
