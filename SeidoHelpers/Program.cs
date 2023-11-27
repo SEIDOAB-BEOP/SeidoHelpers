@@ -138,7 +138,6 @@ class Program
 
         Console.WriteLine("\n\nSeidoHelpers Quit");
         Console.ReadKey();
-
     }
 }
 
